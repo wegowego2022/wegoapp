@@ -1,7 +1,8 @@
 import SignIn from './src/pages/SignIn';
 import SignUp from './src/pages/SignUp';
 import More from './src/pages/More';
-import * as React from 'react';
+
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
 import { RootState } from './src/store/reducer';
