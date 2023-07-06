@@ -273,30 +273,30 @@ app.use((err, req, res, next) => {
 });
 
 // 네이버 검색 API 예제 - 영화,드라마 검색
-const client_id = 's6CGlfEGZ2SuWRgraLSw';
-const client_secret = 'jdlGBCi7wZ';
-var axios = require('axios');
-app.post('/search/movie', function (req, res) {
-  console.log(req.body.query);
-  var api_url = 'https://openapi.naver.com/v1/search/movie?query=' + encodeURI(req.body.query); // JSON 결과
+// const client_id = 's6CGlfEGZ2SuWRgraLSw';
+// const client_secret = 'jdlGBCi7wZ';
+// var axios = require('axios');
+// app.post('/search/movie', function (req, res) {
+//   console.log(req.body.query);
+//   var api_url = 'https://openapi.naver.com/v1/search/movie?query=' + encodeURI(req.body.query); // JSON 결과
 
-  axios.get(api_url, {
-      headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
-    })
-    .then(function (response) {
-      if (response.status === 200) {
-        res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
-        res.end(response);
-        console.log(response);
-      } else {
-        res.status(response.status).end();
-        console.log('error = ' + response.status);
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-});
+//   axios.get(api_url, {
+//       headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
+//     })
+//     .then(function (response) {
+//       if (response.status === 200) {
+//         res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
+//         res.end(response);
+//         console.log(response);
+//       } else {
+//         res.status(response.status).end();
+//         console.log('error = ' + response.status);
+//       }
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// });
 
 
 const server = app.listen(3105, () => {
